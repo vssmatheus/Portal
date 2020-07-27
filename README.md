@@ -1,7 +1,5 @@
 # PortalAgroDados
-Portal AgroDados
-
-Sistema de Análise de Dados Agrícolas.
+Portal AgroDados - Sistema de Análise de Dados Agrícolas.
 
 * Python: 
   - Para executar o Projeto tem que esta com a versão do Python 3.7.
