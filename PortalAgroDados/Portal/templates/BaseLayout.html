@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="pt" data-textdirection="ltr" class="loading">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description"
+          content="Stack admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords"
+          content="admin template, stack admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content=“VOLUS”>
+    <title>:: Vólus - Gestão Materiais ::</title>
+    <link rel="apple-touch-icon" href="../static/app-assets/images/portrait/small/avatar-s-1.png">
+    <link rel="stylesheet" type="text/css" href="../static/app-assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../static/app-assets/fonts/feather/style.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/app-assets/fonts/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/app-assets/fonts/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/app-assets/vendors/css/extensions/pace.css">
+    <link rel="stylesheet" type="text/css" href="../static/app-assets/vendors/css/extensions/sweetalert.css">
+    <link rel="stylesheet" type="text/css" href="../static/app-assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/app-assets/vendors/css/extensions/toastr.css">
+    <link rel="stylesheet" type="text/css" href="../static/app-assets/vendors/css/charts/morris.css">
+    <link rel="stylesheet" type="text/css" href="../static/app-assets/vendors/css/forms/icheck/icheck.css">
+    <link rel="stylesheet" type="text/css" href="../static/app-assets/vendors/css/forms/icheck/custom.css">
+    <link rel="stylesheet" type="text/css" href="../static/app-assets/vendors/css/forms/selects/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/app-assets/vendors/css/ui/prism.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/app-assets/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="../static/app-assets/css/app.css">
+    <link rel="stylesheet" type="text/css" href="../static/app-assets/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="../static/app-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="../static/app-assets/css/core/menu/menu-types/vertical-overlay-menu.css">
+
+    <link rel="stylesheet" type="text/css" href="../static/app-assets/css/core/colors/palette-gradient.css">
+    <link rel="stylesheet" type="text/css" href="../static/app-assets/css/plugins/forms/wizard.css">
+    <link rel="stylesheet" type="text/css" href="../static/app-assets/css/plugins/forms/validation/form-validation.css">
+    <link rel="stylesheet" type="text/css" href="../static/app-assets/vendors/css/forms/toggle/switchery.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/app-assets/fonts/simple-line-icons/style.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/app-assets/css/plugins/forms/checkboxes-radios.css">
+
+    <link rel="stylesheet" type="text/css" href="../static/app-assets/fonts/simple-line-icons/style.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/app-assets/tour/bootstrap-tour.css">
+    <link rel="stylesheet" type="text/css" href="../static/app-assets/css/plugins/forms/switch.css">
+    <link rel="stylesheet" type="text/css" href="../static/app-assets/css/plugins/extensions/toastr.css">
+
+    <link rel="stylesheet" type="text/css" href="../static/app-assets/css/plugins/extensions/croppie.css">
+
+    <link rel="stylesheet" type="text/css" href="../static/custom/css/style.css">
+
+    <link rel="shortcut icon" href="../static/app-assets/images/portrait/small/avatar-s-1.png">
+
+    <style>
+        .btn-historico {
+            border-color: #3f4444 !important;
+            background-color: #3f4444 !important;
+            color: #77c96e;
+        }
+        .btn-historico:hover {
+            border-color: #3f4444 !important;
+            background-color: #3f4444 !important;
+            color: #77c96e !important;
+        }
+
+         body{
+            font-family: 'fontteste';
+            background-color: #ffffff !important;
+        }
+
+        .main-menu.menu-dark .navigation > li ul li > a {
+            padding: 10px 18px 10px 18px;
+            font-size: 13px;
+        }
+
+
+
+        .brand-logo {
+            margin-top: -5px;
+            z-index: 9999;
+            position: fixed;
+            top: 0;
+            margin: 0 auto;
+        }
+
+        .center-logo {
+            text-align: center;
+        }
+
+        .frame {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        #alerta-tour {
+            position: absolute;
+            z-index: 9999;
+            top: 0px;
+            right: 24px;
+            width: 316px;
+            text-align: right;
+        }
+
+        .form-control {
+            padding: 0.55rem 0.85rem !important;
+        }
+
+        .block-especialidades {
+            border: 1px solid #dae6f9;
+            background: #f5f7fa;
+            padding: 10px;
+            height: 500px;
+            overflow-y: auto;
+        }
+
+        .padding-top {
+            padding-top: 20px;
+        }
+
+        /* ASDASD */
+        label {
+            font-size: 12px;
+            margin-bottom: unset;
+        }
+
+        .custom-radio {
+            margin-bottom: .9em;
+        }
+
+        form .form-control {
+            font-size: 12px;
+        }
+
+        form .form-section {
+            color: #404E67;
+            font-size: 16px !important;
+            border-bottom: 1px solid #afafaf !important;
+            line-height: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .table-click tbody tr:hover {
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body data-open="click" data-menu="vertical-menu" data-col="2-columns"
+  class="vertical-layout vertical-menu 2-columns fixed-navbar menu-collapsed" style="
+        background-position: bottom;
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-image:
+            {% if request.session.TipoUsuario == 2 %}
+                url(../static/app-assets/images/logo/PanoClienteMaterialEscritorio.png);
+            {% elif request.session.TipoUsuario == 4 %}
+                url(../static/app-assets/images/logo/PanoClienteMaterialLimpeza.png);
+            {% elif request.session.TipoUsuario == 6 %}
+                url(../static/app-assets/images/logo/PanoClienteMaterialConstrucao.png);
+            {% elif request.session.TipoUsuario == 8 %}
+                url(../static/app-assets/images/logo/PanoClienteMaterialAlimenticio.png);
+            {% elif request.session.TipoUsuario == 10 %}
+                url(../static/app-assets/images/logo/PanoClienteMaterialMedicamentos.png);
+            {% elif request.session.TipoUsuario == 12 %}
+                url(../static/app-assets/images/logo/PanoClienteMaterialAlimentacaoEscolar.png);
+            {% else %}
+                url(../static/app-assets/images/logo/PanoConveniadaOrcamentoMaterialPadrao.png);
+        {% endif %} ">
+
+
+{#{% if request.session.TipoUsuario == 3 %}#}
+{#<body data-open="click" data-menu="vertical-menu" data-col="2-columns"#}
+{#      class="vertical-layout vertical-menu 2-columns fixed-navbar menu-collapsed" style="#}
+{#                                        background-position: bottom;#}
+{#                                        background-image: url(../static/app-assets/images/logo/PanoConveniadaOrcamentoMaterialPadrao.png);#}
+{#                                        background-size: auto;#}
+{#                                        background-repeat: no-repeat;">#}
+{#{% elif request.session.TipoUsuario == 2 %}#}
+{#<body data-open="click" data-menu="vertical-menu" data-col="2-columns"#}
+{#      class="vertical-layout vertical-menu 2-columns fixed-navbar menu-collapsed" style="#}
+{#                                        background-position: bottom;#}
+{#                                        background-image: url(../static/app-assets/images/logo/PanoClienteMaterialEscritorio.png);#}
+{#                                        background-size: auto;#}
+{#                                        background-repeat: no-repeat;">#}
+{#{% elif request.session.TipoUsuario == 4 %}#}
+{#<body data-open="click" data-menu="vertical-menu" data-col="2-columns"#}
+{#      class="vertical-layout vertical-menu 2-columns fixed-navbar menu-collapsed" style="#}
+{#                                        background-position: bottom;#}
+{#                                        background-image: url(../static/app-assets/images/logo/PanoClienteMaterialLimpeza.png);#}
+{#                                        background-size: auto;#}
+{#                                        background-repeat: no-repeat;">#}
+{#{% elif request.session.TipoUsuario == 6 %}#}
+{#<body data-open="click" data-menu="vertical-menu" data-col="2-columns"#}
+{#      class="vertical-layout vertical-menu 2-columns fixed-navbar menu-collapsed" style="#}
+{#                                        background-position: bottom;#}
+{#                                        background-image: url(../static/app-assets/images/logo/PanoClienteMaterialConstrucao.png);#}
+{#                                        background-size: auto;#}
+{#                                        background-repeat: no-repeat;">#}
+{#{% elif request.session.TipoUsuario == 8 %}#}
+{#<body data-open="click" data-menu="vertical-menu" data-col="2-columns"#}
+{#      class="vertical-layout vertical-menu 2-columns fixed-navbar menu-collapsed" style="#}
+{#                                        background-position: bottom;#}
+{#                                        background-image: url(../static/app-assets/images/logo/PanoClienteMaterialAlimenticio.png);#}
+{#                                        background-size: auto;#}
+{#                                        background-repeat: no-repeat;">#}
+{#{% elif request.session.TipoUsuario == 10 %}#}
+{#<body data-open="click" data-menu="vertical-menu" data-col="2-columns"#}
+{#      class="vertical-layout vertical-menu 2-columns fixed-navbar menu-collapsed" style="#}
+{#                                        background-position: bottom;#}
+{#                                        background-image: url(../static/app-assets/images/logo/PanoClienteMaterialMedicamentos.png);#}
+{#                                        background-size: auto;#}
+{#                                        background-repeat: no-repeat;">#}
+{#{% elif request.session.TipoUsuario == 12 %}#}
+{#<body data-open="click" data-menu="vertical-menu" data-col="2-columns"#}
+{#      class="vertical-layout vertical-menu 2-columns fixed-navbar menu-collapsed" style="#}
+{#                                        background-position: bottom;#}
+{#                                        background-image: url(../static/app-assets/images/logo/PanoClienteMaterialAlimentacaoEscolar.png);#}
+{#                                        background-size: auto;#}
+{#                                        background-repeat: no-repeat;">#}
+{#{% else %}#}
+{#<body data-open="click" data-menu="vertical-menu" data-col="2-columns"#}
+{#      class="vertical-layout vertical-menu 2-columns fixed-navbar menu-collapsed" style="#}
+{#                                        background-position: bottom;#}
+{#                                        background-image: url(../static/app-assets/images/logo/OrcamentoMaterialPadrao.png);#}
+{#                                        background-size: auto;#}
+{#                                        background-repeat: no-repeat;">#}
+{#{% endif %}#}
+<!-- navbar-fixed-top-->
+<nav class="header-navbar navbar navbar-with-menu navbar-fixed-top navbar-semi-dark navbar-shadow">
+    <div class="navbar-wrapper">
+        <div class="navbar-header logo-menu-top" style="">
+            <ul class="nav navbar-nav">
+                <li class="nav-item mobile-menu hidden-md-up float-xs-left">
+                    <a href="#" class="nav-link nav-menu-main menu-toggle hidden-xs"><i class="ft-menu font-large-1"></i></a></li>
+                <li class="nav-item"><a href="/Home" class="navbar-brand" style="padding: 29px 112px;">
+                <li class="nav-item hidden-md-up float-xs-right">
+                    <a data-toggle="collapse" data-target="#navbar-mobile" class="nav-link open-navbar-container"><i class="fa fa-ellipsis-v"></i></a>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-container content container-fluid">
+            <div id="navbar-mobile" class="collapse navbar-toggleable-sm">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item hidden-sm-down">
+                        <a href="#" class="nav-link nav-menu-main menu-toggle hidden-xs"><i class="ft-menu"></i></a>
+                    </li>
+                    {% if request.session.TipoUsuario != 3 %}
+                        <li class="dropdown nav-item mega-dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle nav-link" aria-expanded="false">Acesso Rápido</a>
+                            <ul class="mega-dropdown-menu dropdown-menu row">
+                                <li class="col-md-4">
+                                    <ul class="drilldown-menu sliding-menu" style="height: 209px;">
+                                        <div class="sliding-menu-wrapper" style="width: 768px;">
+                                            <ul id="menu-panel-0hkhn" class="menu-panel-root" style="width: 256px;">
+                                                 {% if 1 in request.session.CodigoMenus or 2 in request.session.CodigoMenus %}
+                                                    <li><a href="/ConsultarDadosCartao/0" class="dropdown-item"><i class="icon-credit-card"></i> Cadastrar Cartão</a></li>
+                                                 {% endif %}
+                                                 {% if 1 in request.session.CodigoMenus or 2 in request.session.CodigoMenus %}
+                                                    <li><a href="/CadastrarGestores/0" class="dropdown-item"><i class="icon-users"></i> Cadastrar Gestor</a></li>
+                                                 {% endif %}
+                                                 {% if 1 in request.session.CodigoMenus %}
+                                                    <li><a href="/ConsultaListaCartao/CadastrarOrcamento" class="dropdown-item"><i class="icon-calculator"></i> Cadastrar Solicitação de Orçamento</a></li>
+                                                 {% endif %}
+                                                 {% if 2 in request.session.CodigoMenus %}
+                                                     <li><a href="/ConsultaListaCartao/PedidoNovaVia" class="dropdown-item"><i class="icon-users"></i> Pedido Nova Via Cartão</a></li>
+                                                 {% endif %}
+                                            </ul>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li class="col-md-4">
+                                    <ul class="drilldown-menu sliding-menu" style="height: 209px;">
+                                        <div class="sliding-menu-wrapper" style="width: 768px;">
+                                            <ul id="menu-panel-0hkhn" class="menu-panel-root" style="width: 256px;">
+                                                {% if 2 in request.session.CodigoMenus %}
+                                                    <li><a href="/ConsultaListaCartao/ConsultarCartao" class="dropdown-item"><i class="icon-credit-card"></i> Alterar Cadastro Cartão</a></li>
+                                                {% endif %}
+                                                {% if 2 in request.session.CodigoMenus %}
+                                                    <li><a href="/ConsultarGestores" class="dropdown-item"><i class="icon-users"></i> Alterar Cadastro Gestor</a></li>
+                                                {% endif %}
+                                                {% if 3 in request.session.CodigoMenus %}
+                                                    <li><a href="/Relatorios/ComparativoDeOrcamento" class="dropdown-item"><i class="icon-calculator"></i> Compartivo de Cotações</a></li>
+                                                {% endif %}
+                                                {% if 2 %}
+                                                     <li><a href="/ConsultaListaOrcamento/TD" class="dropdown-item"><i class="icon-book-open"></i> Consultar Orçamentos</a></li>
+                                                {% endif %}
+                                                {% if 3 in request.session.CodigoMenus %}
+                                                     <li><a href="/Relatorios/DemostrativoDeGastos" class="dropdown-item"><i class="icon-calculator"></i> Demonstrativo de Gastos</a></li>
+                                                {% endif %}
+                                            </ul>
+                                        </div>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    {% endif %}
+                </ul>
+                <ul class="nav navbar-nav float-xs-right">
+                    <img href="/Home" alt="stack admin logo" src="../static/app-assets/images/logo/icon-nav-bar-orc-eletronico.png" class="brand-logo"></a>
+                    <li class="dropdown dropdown-user nav-item">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle nav-link dropdown-user-link">
+{#                            <span class="avatar avatar-online"><img src="../../static/app-assets/images/favicon.png" alt="Logo" id="logoEmpresa"></span>#}
+                            <span class="user-name">{{ request.session.Login }}</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a onclick="abreEmpresasGrupo()" class="dropdown-item"><i class="ft-user"></i> Empresas do Grupo</a>
+                            <div class="dropdown-divider"></div>
+                            {% if request.session.TipoUsuario != 3 %}
+                                <a onclick="abreAlterarSenha()" class="dropdown-item"><i class="ft-lock"></i> Alterar Senha</a>
+                                <div class="dropdown-divider"></div>
+                            {% endif %}
+                            <a href="https://www2.brasilcard.com.br/files/baixar/TeamViewer_Setup.exe" class="dropdown-item"><i class="ft-download"></i>Acesso Remoto</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="https://download.anydesk.com/AnyDesk.exe?_ga=2.211619093.1488169438.1539957852-631035547.1538225258" class="dropdown-item"><i class="ft-download"></i>Acesso AnyDesk</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="" target="_blank" class="dropdown-item"><i class="ft-eye"></i>Manual Orçamento Eletrônico</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="/Deslogar" class="dropdown-item"><i class="ft-power"></i> Encerrar Sessão</a>
+                        </div>
+                    </li>
+                </ul>
+                {% if request.session.FaturaVencida %}
+                    <ul class="nav navbar-nav float-xs-right">
+                        <li class="dropdown dropdown-notification nav-item"><a href="#" data-toggle="dropdown"
+                                                                               class="nav-link nav-link-label"
+                                                                               aria-expanded="true"><i
+                                class="ficon ft-bell"></i><span
+                                class="tag tag-pill tag-default tag-danger tag-default tag-up">{{ request.session.FaturaVencida|length }}</span></a>
+                            <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
+                                <li class="dropdown-menu-header">
+                                    <h6 class="dropdown-header m-0"><span
+                                            class="grey darken-2">Fatura(s) Vencida(s)</span><span
+                                            class="notification-tag tag tag-danger  float-xs-right m-0">1 Novo</span>
+                                    </h6>
+                                </li>
+                                <li class="list-group scrollable-container ps-container ps-theme-dark ps-active-y"
+                                    data-ps-id="5eb1989d-a8cc-5484-6fce-a8089e1ca322">
+                                        <a onclick="abreModalFaturaVencida()" class="list-group-item">
+                                            <div class="media">
+                                                <div class="media-left valign-middle"><i
+                                                        class="ft-alert-triangle icon-bg-circle bg-red bg-darken-1"></i>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h6 class="media-heading red darken-1">{{ request.session.FaturaVencida.0.VENCIMENTOS }}</h6>
+                                                    <p class="notification-text font-small-3 text-muted"> {{ request.session.FaturaVencida.0.VENCIMENTOS }}</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;">
+                                        <div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+                                    </div>
+                                    <div class="ps-scrollbar-y-rail" style="top: 0px; height: 255px; right: 3px;">
+                                        <div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 167px;"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<div data-scroll-to-active="true" class="main-menu menu-fixed menu-dark menu-accordion menu-shadow">
+    <div class="main-menu-content">
+        <ul id="main-menu-navigation" data-menu="menu-navigation" class="navigation navigation-main">
+            <li class=" nav-item">
+                <a>
+                    <i class="ft-user"></i>
+                    <span data-i18n="" style="background: #3f4444" class="menu-title">Empresa Logada</span>
+                </a>
+                <ul class="menu-content">
+                    <li data-menu=""><a class="menu-item">{{ request.session.NomeEmpresa }}</a></li>
+                    <li data-menu="">
+                        {% if request.session.TipoConveniada %}
+                            <a class="menu-item">Código : {{ request.session.FilialConveniada }}-{{ request.session.Conveniada }}-{{ request.session.SequenciaConveniada }}</a>
+                        {% else %}
+                            <a class="menu-item">Código : {{ request.session.Filial }}-{{ request.session.Cliente }} </a>
+                        {% endif %}
+                    </li>
+                    <li data-menu=""><a class="menu-item">Cnpj : {{ request.session.Cnpj }}</a>
+                    {% if request.session.TipoConveniada == False%}
+                        <li data-menu=""><a class="menu-item">Plano Fechamento: {{ request.session.PlanoFechamento }}</a></li>
+                    {% endif %}
+                </ul>
+            </li>
+            {% for menu in request.session.Menus %}
+                <li class=" nav-item">
+                    <a href="index.html">
+                        <i class="{{ menu.ICONE }}"></i>
+                        <span data-i18n="" style="background: #3f4444" class="menu-title">{{menu.DESCRICAO_MENU}}</span>
+                    </a>
+                    <ul class="menu-content">
+                    {% for submenu in menu.DESCRICAO_SUBMENU %}
+                        <li data-menu=""><a {{ submenu.ROTA }} class="menu-item">{{ submenu.SUBMENU }}</a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+
+
+<script type="text/javascript" src="../static/Scripts/jquery.min.js"></script>
+<script type="text/javascript" src="../static/js/funcoes.js"></script>
+<script>
+    var GRAFICO = [];
+    var GRAFICO_ORC = [];
+    var GRAFICO_LIMITE = '';
+    var GRAFICO_EMPENHO = [];
+    var LABEL_GRAFICO_EMPENHO = [];
+    var LABEL_GRAFICO_RANKING = [];
+    var VALOR_GRAFICO_RANKING = [];
+    var PERCENTUAL_GRAFICO_RANKING = [];
+    var GRAFICO_RANKING = [];
+    var VALOR  = [];
+    var TEM_EMPENHO = '';
+
+
+</script>
+
+<div class="app-content content container-fluid">
+    <div class="content-wrapper">
+        <div class="content-body">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+    </div>
+</div>
+<div class="modal" data-backdrop="static" data-keyboard="false" id="modalConsultaDadosOrcamentos" tabindex="-1" role="dialog" aria-hidden="true" style="margin-top: 50px; ">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" style="border-style: ridge; background: white;">
+            <div class="modal-header" style="border-bottom:3px solid #75c46a; background: #3f4444; color: #FFF">
+                <button type="button" onclick="" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="white" aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" >DETALHES ORÇAMENTO ELETRÔNICO MATERIAL CONTRUÇÃO</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row formata-cabecalho" style="border-width: 1px;border-color: #E3EBF3;border-style: solid;border-radius: 3px; margin-left: 0;margin-right: 0; margin-bottom: 20px;">
+                    <div class="col-md">
+                        <ul class="nav nav-tabs nav-top-border no-hover-bg">
+                            {% if 1 in request.session.CodigoMenus %}
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="baseIcon-tab11" data-toggle="tab" aria-controls="tabIcon11" href="#tabIcon11" aria-expanded="true">
+                                        <i class="ft-cog"></i> Dados Orçamentos
+                                    </a>
+                                </li>
+                            {% endif %}
+                            {% if 2 in request.session.CodigoMenus %}
+                                <li class="nav-item">
+                                    <a class="nav-link" id="baseIcon-tab13" data-toggle="tab" aria-controls="tabIcon13" href="#tabIcon13">
+                                        <i class="ft-file"></i> Dados Complementares
+                                    </a>
+                                </li>
+                            {% endif %}
+                            {% if 3 in request.session.CodigoMenus %}
+                                <li class="nav-item">
+                                    <a class="nav-link" id="baseIcon-tab13" data-toggle="tab" aria-controls="tabIcon13" href="#tabIcon13">
+                                        <i class="ft-file"></i> Produtos
+                                    </a>
+                                </li>
+                            {% endif %}
+                            {% if 4 in request.session.CodigoMenus %}
+                                <li class="nav-item">
+                                    <a class="nav-link" id="baseIcon-tab13" data-toggle="tab" aria-controls="tabIcon13" href="#tabIcon13">
+                                        <i class="ft-file"></i> Operacional
+                                    </a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                        <div class="tab-content px-1 pt-1">
+                            {% if 1 in request.session.CodigoMenus %}{% endif %}
+                            {% if 2 in request.session.CodigoMenus %}{% endif %}
+                            {% if 3 in request.session.CodigoMenus %}{% endif %}
+                            {% if 4 in request.session.CodigoMenus %}
+                                <div role="tabpanel" class="tab-pane" id="tabIcon13" aria-expanded="true" aria-labelledby="baseIcon-tab13">
+                                    <div class="form-body">
+                                         <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label>Estado</label>
+
+                                            </div>
+                                         </div>
+                                          <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Cidaedes</label>
+
+                                            </div>
+                                          </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                 </div>
+            </div>
+            <div class="modal-footer" style="border-top-width: 0;">
+                <div class="text-xs-right">
+                    <button type="button" onclick="RelatorioVendaPorEstabelecimento();" style="padding: 0.55rem 0.85rem; border-radius: 0.25rem; " class="btn btn-primary">
+                        <i class="fa fa-print"></i> Gerar Relátorio
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade " id="modalEmpresasGrupo" tabindex="-1" role="dialog" aria-hidden="true" style="margin-top: 50px;">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header white" style="background-color: #3f4444;">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" style="color:#fff">&times;</span>
+                </button>
+                <h4 class="modal-title">Acessar Empresas do Grupo</h4>
+            </div>
+            <div class="card-body" style="overflow: auto">
+                <div id="recent-buyers" class="list-group height-300 position-relative border-top-blue-grey border-top-lighten-5">
+                    {% for empresa in request.session.GrupoEmpresas %}
+                        <a onclick="alteraEmpresaLogada({{ empresa }})" data-toggle="tooltip"
+                           data-original-title="Clique sobre a Empresa que deseja ter acesso."
+                           class="list-group-item list-group-item-action media no-border">
+                            <div class="media-body">
+                                <div class="row">
+                                    <div class="col-sm-8 pull-left">
+                                        <h6 class="list-group-item-heading" style="color:#3f4444">{{ empresa.NOME }}</h6>
+                                        <p class="list-group-item-text"><span class="tag" style="color:#3f4444">{{ empresa.CNPJ }}</span></p>
+                                    </div>
+                                    <div class="col-sm-4 pull-rigth">
+                                        <h6 class="list-group-item-heading"><span style="color:#0c5f2f" class="font-small-2 float-xs-right">{{ empresa.TERMINAL }}</span></h6>
+                                        {% if empresa.TIPO == 'ABASTECIMENTO' %}
+                                            <p class="list-group-item-text pt-2"><span class="tag ml-0 tag-verde-volus float-xs-right white" >ABASTECIMENTO</span></p>
+                                        {% else %}
+                                            <p class="list-group-item-text pt-2"><span class="tag ml-0 tag-verde-volus float-xs-right white">ORÇAMENTO</span></p>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <hr style="margin:0; border:1px solid rgba(0, 0, 0, 0.1)">
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{#<div class="modal fade text-xs-left" id="modalErro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2"#}
+{#     aria-hidden="true">#}
+{#    <div class="modal-dialog" role="document">#}
+{#        <div class="modal-content">#}
+{#            <div class="modal-header">#}
+{#                <button type="button" class="close" data-dismiss="modal" aria-label="Close">#}
+{#                    <span aria-hidden="true">×</span>#}
+{#                </button>#}
+{#                <h4 class="modal-title" id="myModalLabel2"><i class="fa fa-warning red"></i> Atenção</h4>#}
+{#            </div>#}
+{#            <div class="modal-body center">#}
+{#                <h5 id="titleModalError" style="font-wigth:bold"></h5>#}
+{#                <p id="conteudoModalErro"></p>#}
+{#            </div>#}
+{#            <div class="modal-footer">#}
+{#                <button type="button" class="btn grey btn-outline-secondary" data-dismiss="modal">Fechar</button>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+<div class="modal fade " id="modalRelatorios" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document" style="width: 90%; max-width:90%;height: 100%;">
+        <div class="modal-content" style="border-style: ridge; background: white; height: 90%">
+            <div class="modal-header" style="background: #3f4444; color: #FFF">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="opacity: 1;">
+                        <i class="fa fa-close" style="color: #fff"></i>
+                    </button>
+                <h4 class="modal-title" id="tituloRelatorio">Relatório</h4>
+            </div>
+            <div class="modal-body" id="linkFrameRelatorio" style="height: 90%;">
+
+            </div>
+        </div>
+    </div>
+</div>
+{#<div class="modal fade " id="modalConsultaHistoricoLimiteCredito" tabindex="-1" role="dialog" aria-hidden="true"#}
+{#     style="margin-top: 75px;">#}
+{#    <div class="modal-dialog modal-lg" role="document">#}
+{#        <div class="modal-content">#}
+{#            <div class="card" id="modalConsultaHistoricoLimiteCredito">#}
+{#                <div class="modal-header white" style="border-bottom:3px solid #75c46a; background: #3f4444; color: #FFF">#}
+{#                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">#}
+{#                        <span class="white" aria-hidden="true">×</span>#}
+{#                    </button>#}
+{#                    <h4 class="modal-title" id="myModalLabel8">Histórico de Limite de Crédito Cartão</h4>#}
+{#                </div>#}
+{#                <div class="card-footer">#}
+{#                    <div class="table-responsive" style="max-height:400px">#}
+{#                        <table class="table table-striped table-hover table-bordered table-click"#}
+{#                               style="font-size:13px">#}
+{#                            <thead>#}
+{#                            <tr role="row">#}
+{#                                <th class="center">Data Alteração</th>#}
+{#                                <th>Usuário Alteração</th>#}
+{#                                <th>Limite Crédito DE</th>#}
+{#                                <th>Limite Crédito PARA</th>#}
+{#                            </tr>#}
+{#                            </thead>#}
+{#                            <tbody id="grid-historico-limite-credito">#}
+{#                            </tbody>#}
+{#                        </table>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{#<div class="modal fade " id="modalConsultaHistoricoAlteracaoKmHs" tabindex="-1" role="dialog" aria-hidden="true"#}
+{#     style="margin-top: 75px;">#}
+{#    <div class="modal-dialog modal-lg" role="document">#}
+{#        <div class="modal-content">#}
+{#            <div class="card" id="modalConsultaHistoricoAlteracaoKmHs">#}
+{#                <div class="modal-header white"  style="border-bottom:3px solid #75c46a; background: #3f4444; color: #FFF">#}
+{#                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">#}
+{#                        <span class="white" aria-hidden="true">×</span>#}
+{#                    </button>#}
+{#                    <h4 class="modal-title" id="myModalLabel8">Histórico de Alteração KM/HS</h4>#}
+{#                </div>#}
+{#                <div class="card-footer">#}
+{#                    <div class="table-responsive" style="max-height:400px">#}
+{#                        <table class="table table-striped table-hover table-bordered table-click"#}
+{#                               style="font-size:13px">#}
+{#                            <thead>#}
+{#                            <tr role="row">#}
+{#                                <th class="center">Data Alteração</th>#}
+{#                                <th>KM/HS DE</th>#}
+{#                                <th>KM/HS PARA</th>#}
+{#                                <th>Produto</th>#}
+{#                                <th>Motivo</th>#}
+{#                                <th>Estabelecimento</th>#}
+{#                                <th>Usuário</th>#}
+{#                            </tr>#}
+{#                            </thead>#}
+{#                            <tbody id="grid-historico-KmHs">#}
+{#                            </tbody>#}
+{#                        </table>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{#<div class="modal fade " id="modalConsultaHistoricoAlteracaoStatusTravaM" tabindex="-1" role="dialog" aria-hidden="true" style="margin-top: 75px;">#}
+{#    <div class="modal-dialog modal-lg" role="document">#}
+{#        <div class="modal-content" style="border-style: ridge; background: white;">#}
+{#            <div class="card" id="modalConsultaHistoricoAlteracaoStatusTravaM">#}
+{#                <div class="modal-header" style="border-bottom:3px solid #75c46a; background: #3f4444; color: #FFF">#}
+{#                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">#}
+{#                        <span class="white" aria-hidden="true">×</span>#}
+{#                    </button>#}
+{#                    <h4 class="modal-title" id="myModalLabel8">Histórico de Alteração de Status e Trava de Média KM/HS</h4>#}
+{#                </div>#}
+{#                <div class="card-footer">#}
+{#                    <div class="table-responsive" style="max-height:400px">#}
+{#                        <table class="table table-striped table-hover table-bordered table-click" style="font-size:13px">#}
+{#                            <thead>#}
+{#                            <tr role="row">#}
+{#                                <th class="center">Data Alteração</th>#}
+{#                                <th>Status De</th>#}
+{#                                <th>Status Para</th>#}
+{#                                <th>Trava Média De</th>#}
+{#                                <th>Trava Média Para</th>#}
+{#                                <th>Usuário</th>#}
+{#                            </tr>#}
+{#                            </thead>#}
+{#                            <tbody id="grid-historico-status-trava-media">#}
+{#                            </tbody>#}
+{#                        </table>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{#<div class="modal fade text-xs-left" data-keyboard="false" data-backdrop="static" id="modalNegociacaoPreco"#}
+{#     tabindex="-1" role="dialog"#}
+{#     style="margin-top: 200px;" >#}
+{#    <div class="modal-dialog" role="document">#}
+{#        <div class="modal-content">#}
+{#            <div class="modal-header" style="border-bottom:3px solid #75c46a; background: #3f4444; color: #FFF">#}
+{#                <button type="button" class="close" data-dismiss="modal" aria-label="Close">#}
+{#                    <span class="white" aria-hidden="true">×</span>#}
+{#                </button>#}
+{#                <h4 class="modal-title">Selecionar tipo Negociação Preço</h4>#}
+{#            </div>#}
+{#            <div class="modal-body">#}
+{#                <div class="row negociaPreco"#}
+{#                         {% if request.session.PermIncluir  == 'N' or 11 not in request.session.CodigoMenus %}#}
+{#                            style="pointer-events: none;"#}
+{#                        {% endif %}#}
+{#                        >#}
+{#                    <div class="col-md-6 col-sm-12">#}
+{#                        <br>#}
+{#                        <input id="estabelecimento" type="checkbox" value="PRO">#}
+{#                        <label style="font-size: 15px;" > Estabelecimento</label>#}
+{#                        <br><br>#}
+{#                    </div>#}
+{#                    <div class="col-md-6 col-sm-12">#}
+{#                        <br>#}
+{#                        <input id="produto_check" type="checkbox" value="PRO">#}
+{#                        <label style="font-size: 15px;"> Produto</label>#}
+{#                        <br><br>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="modal-footer">#}
+{#            {% if 12 in request.session.CodigoMenus%}#}
+{#                {% if request.session.PermAlterar == 'S' %}#}
+{#                    <button style="padding: 0.55rem 0.85rem; border-radius: 0.25rem;" onclick="window.open('/ConsultarNegociacaoPrecoProduto','_parent')" class="btn btn-primary" type="button">#}
+{#                        <i class="fa fa-check-square-o"></i> Alterar Preço Negociado#}
+{#                    </button>#}
+{#                {% endif %}#}
+{#            {% endif %}#}
+{#            <button style="padding: 0.55rem 0.85rem; border-radius: 0.25rem;" onclick="$('#modalNegociacaoPreco').modal('hide')" class="btn btn-primary" type="button">#}
+{#                    <i class="fa fa-sign-in"></i> Voltar#}
+{#            </button>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{#<div class="modal fade " id="modalConsultaBloqueioProgramadoCartao" tabindex="-1" role="dialog" aria-hidden="true"#}
+{#     style="margin-top: 75px;">#}
+{#    <div class="modal-dialog modal-xl" role="document">#}
+{#        <div class="modal-content" style="border-style: ridge; background: white;">#}
+{#            <div class="modal-header" style="border-bottom:3px solid #75c46a; background: #3f4444; color: #FFF">#}
+{#                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="opacity: 1;">#}
+{#                        <i class="fa fa-close" style="color: #fff"></i>#}
+{#                    </button>#}
+{#                    <h4 class="modal-title" id="myModalLabel8">Consulta Bloqueio Programado de Cartão</h4>#}
+{#                </div>#}
+{#                <div class="card-body collapse in">#}
+{#                    <form name="MVPformConsultaVeiculo">#}
+{#                        <h3 id="H3-Status"></h3>#}
+{#                        <div class="card-block col-modal-veiculos" class="padding-bottom: 0;">#}
+{#                            <div id="accordionWrap1" role="tablist" aria-multiselectable="true">#}
+{#                                <div class="card collapse-icon accordion-icon-rotate left" style="margin-bottom: 0;">#}
+{#                                    <div class="col-md-2">#}
+{#                                        <div class="form-group">#}
+{#                                            <label>Data Inicial </label>#}
+{#                                            <div class="input-group ">#}
+{#                                                <input class="form-control date primeiro_dia_mes" id="dataInicial">#}
+{#                                                <div class="input-group-addon">#}
+{#                                                    <i class="fa fa-calendar"></i>#}
+{#                                                </div>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <div class="col-md-2">#}
+{#                                        <div class="form-group">#}
+{#                                            <label>Data Final </label>#}
+{#                                            <div class="input-group ">#}
+{#                                                <input class="form-control date ultimo_dia_mes" id="dataFinal">#}
+{#                                                <div class="input-group-addon">#}
+{#                                                    <i class="fa fa-calendar"></i>#}
+{#                                                </div>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <div class="col-md-2">#}
+{#                                        <div class="form-group">#}
+{#                                            <label>Motivo </label>#}
+{#                                            <div class="input-group ">#}
+{#                                                <select id="motivo" class="form-control">#}
+{#                                                    <option value="TD">Todos</option>#}
+{#                                                    <option value="BTD">BLOQUEIO POR NÃO TRANSACIONAR EM DIAS</option>#}
+{#                                                    <option value="BTP">BLOQUEIO POR TRANSAÇÃO PROTEGIDA</option>#}
+{#                                                </select>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <div class="col-md-2">#}
+{#                                        <div class="form-group">#}
+{#                                            <label class="white">.</label>#}
+{#                                            <button type="button" id="consultaBloqueioa"#}
+{#                                                    style="padding: 0.55rem 0.85rem; border-radius: 0.25rem; width: 100%"#}
+{#                                                    onclick="BuscaBloqueioProgramado();"#}
+{#                                                    class="btn btn-primary">#}
+{#                                                <i class="fa fa-search"></i> Consultar#}
+{#                                            </button>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </form>#}
+{#                </div>#}
+{#                <div class="card-footer">#}
+{#                    <div class="table-responsive" style="max-height:400px">#}
+{#                        <table class="table table-striped table-hover table-bordered table-click"#}
+{#                               style="font-size:13px">#}
+{#                            <thead>#}
+{#                            <tr role="row">#}
+{#                                <th class="left">Codigo Bloqueio</th>#}
+{#                                <th>Data</th>#}
+{#                                <th>Motivo</th>#}
+{#                            </tr>#}
+{#                            </thead>#}
+{#                            <tbody id="grid-bloqueio-cartao">#}
+{#                            </tbody>#}
+{#                        </table>#}
+{#                    </div>#}
+{#                </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{#<div class="modal fade text-xs-left" data-keyboard="false" data-backdrop="static" id="modalParametroSistema"#}
+{#     tabindex="-1" role="dialog" style="margin-top: 200px;" >#}
+{#    <div class="modal-dialog" role="document">#}
+{#        <div class="modal-content" style="border-style: ridge; background: white;">#}
+{#            <div class="modal-header" style="border-bottom:3px solid #75c46a; background: #3f4444; color: #FFF">#}
+{#                <button type="button" class="close" data-dismiss="modal" aria-label="Close">#}
+{#                    <span class="white" aria-hidden="true">×</span>#}
+{#                </button>#}
+{#                <h4 class="modal-title">Parametrização Do Sistema</h4>#}
+{#            </div>#}
+{#            <div class="modal-body">#}
+{#                <form action="CadastraOrcamento" method="POST" name="formTipoManu">#}
+{#                    {% csrf_token %}#}
+{#                    {% if request.session.TipoUsuario == 2 %}#}
+{#                        <div class="form-group row">#}
+{#                            <label class="col-md-6 col-sm-12 label-control" for="projectinput1">Bloquear Cartões por#}
+{#                                dias sem transacionar:</label>#}
+{#                            <div class="col-md-6 col-sm-12">#}
+{#                                <select id="BloqueioCrtDiatransacionar" class="form-control">#}
+{#                                </select>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="form-group row">#}
+{#                            <label class="col-md-6 col-sm-12 label-control" for="projectinput1">Quantidade de dias sem#}
+{#                                transacionar:</label>#}
+{#                            <div class="col-md-6 col-sm-12">#}
+{#                                <input type="text" id="QTDCrtDiasSemTransacionar" class="form-control" maxlength="3" name="fname">#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="form-group row">#}
+{#                            <label class="col-md-6 col-sm-12 label-control" for="projectinput1">Bloquear Cartões por#}
+{#                                transação protegida:</label>#}
+{#                            <div class="col-md-6 col-sm-12">#}
+{#                                <select id="BloquearCrtTransacaoProtegida" class="form-control">#}
+{#                                </select>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="form-group row">#}
+{#                            <label class="col-md-6 col-sm-12 label-control" for="projectinput1">Quantidade de transações#}
+{#                                protegidas:</label>#}
+{#                            <div class="col-md-6 col-sm-12">#}
+{#                                <input type="text" id="QTDBloquearCrtTransacaoProtegida" maxlength="3" class="form-control"#}
+{#                                       name="fname">#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    {% else %}#}
+{#                        <div class="form-group row">#}
+{#                            <label class="col-md-6 col-sm-12 label-control" for="projectinput1">Quantidade Mínima de 03#}
+{#                                Orçamentos:</label>#}
+{#                            <div class="col-md-6 col-sm-12">#}
+{#                                <select id="QTDMinimaOrcamento" class="form-control">#}
+{#                                </select>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="form-group row">#}
+{#                            <label class="col-md-6 col-sm-12 label-control" for="projectinput1">Orçamentos com#}
+{#                                Vistoriador:</label>#}
+{#                            <div class="col-md-6 col-sm-12">#}
+{#                                <select id="OrcamentoVistoriador" class="form-control">#}
+{#                                </select>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="form-group row">#}
+{#                            <label class="col-md-6 col-sm-12 label-control" for="projectinput1">Liberar cadastro de#}
+{#                                acesso gestor com CPF iguais :</label>#}
+{#                            <div class="col-md-6 col-sm-12">#}
+{#                                <select id="CadastroMesmoCpf" class="form-control">#}
+{#                                </select>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    {% endif %}#}
+{#                </form>#}
+{#            </div>#}
+{#            <div class="modal-footer">#}
+{#                {% if request.session.PermAlterar == 'S' %}#}
+{#                    <button style="padding: 0.55rem 0.85rem; border-radius: 0.25rem;"#}
+{#                            onclick="alteraParametrosSistemaFrota({{ request.session.TipoUsuario }});"#}
+{#                            class="btn btn-primary" id="btn-acessar-orcamento"><i class="fa fa-check-square-o"></i> Alterar#}
+{#                    </button>#}
+{#                {% endif %}#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{#<div class="modal fade " id="modalConsultaItens" tabindex="-1" role="dialog" aria-hidden="true"#}
+{#     style="margin-top: 50px;">#}
+{#    <div class="modal-dialog modal-lg" role="document">#}
+{#        <div class="modal-content">#}
+{#            <div class="modal-header">#}
+{#                <button type="button" class="close" data-dismiss="modal" aria-label="Close">#}
+{#                    <span aria-hidden="true">&times;</span>#}
+{#                </button>#}
+{#                <h4 class="modal-title" id="myModalLabel17">Consulta de Produtos/Serviços</h4>#}
+{#            </div>#}
+{#            <div class="modal-body">#}
+{#                <div class="row">#}
+{#                    <div class="col-md-6">#}
+{#                        <div class="form-group">#}
+{#                            <label> Descrição Item</label>#}
+{#                            <input id="descricao_item_modal" class="form-control" required="True"#}
+{#                                   style="text-transform:uppercase" maxlength="15">#}
+                            {#                        {{ form.descricao_item_modal.label }} :#}
+                            {#                        {% form_field form.descricao_item_modal class="form-control" required="True" style="text-transform:uppercase" maxlength="15" %}#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col-md-2">#}
+{#                        <div class="form-group">#}
+{#                            <label> Grupo Item</label>#}
+{#                            <input id="grupo_item_modal" class="form-control select">#}
+                            {#                        {{ form.grupo_item_modal.label }} :#}
+                            {#                        {% form_field form.grupo_item_modal class="custom-select form-control" data-toggle="tooltip" required="True" %}#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col-md-2">#}
+{#                        <div class="form-group">#}
+{#                            <label> Tipo Item</label>#}
+{#                            <input id="tipo_item_modal" class="form-control select">#}
+                            {#                        {{ form.tipo_item_modal.label }} :#}
+                            {#                            {% form_field form.tipo_item_modal class="custom-select form-control" data-toggle="tooltip" required="True" %}#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col-md-2">#}
+{#                        <div class="form-group">#}
+{#                            <label style="color:#fff">.</label>#}
+{#                            <div>#}
+{#                                <button type="button"#}
+{#                                        style="padding: 0.55rem 0.85rem; border-radius: 0.25rem; width: 100%"#}
+{#                                        onclick="buscaItemDescricao()" class="btn btn-primary" id="btnConsultarItem">#}
+{#                                    Consultar#}
+{#                                </button>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="row">#}
+{#                    <div class="col-md-12" id="htmlTableProdutos">#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{#<div class="modal fade " id="modalEmpresasGrupo" tabindex="-1" role="dialog" aria-hidden="true" style="margin-top: 50px;">#}
+{#    <div class="modal-dialog modal-lg" role="document">#}
+{#        <div class="modal-content">#}
+{#            <div class="modal-header white" style="background-color: #3f4444;">#}
+{#                <button type="button" class="close" data-dismiss="modal" aria-label="Close">#}
+{#                    <span aria-hidden="true" style="color:#fff">&times;</span>#}
+{#                </button>#}
+{#                <h4 class="modal-title">Acessar Empresas do Grupo</h4>#}
+{#            </div>#}
+{#            <div class="card-body" style="overflow: auto">#}
+{#                <div id="recent-buyers" class="list-group height-300 position-relative border-top-blue-grey border-top-lighten-5">#}
+{#                    {% for empresa in request.session.GrupoEmpresas %}#}
+{#                        <a onclick="alteraEmpresaLogada({{ empresa }})" data-toggle="tooltip"#}
+{#                           data-original-title="Clique sobre a Empresa que deseja ter acesso."#}
+{#                           class="list-group-item list-group-item-action media no-border">#}
+{#                            <div class="media-body">#}
+{#                                <div class="row">#}
+{#                                    <div class="col-sm-8 pull-left">#}
+{#                                        <h6 class="list-group-item-heading" style="color:#3f4444">{{ empresa.NOME }}</h6>#}
+{#                                        <p class="list-group-item-text"><span class="tag" style="color:#3f4444">{{ empresa.CNPJ }}</span></p>#}
+{#                                    </div>#}
+{#                                    <div class="col-sm-4 pull-rigth">#}
+{#                                        <h6 class="list-group-item-heading"><span style="color:#0c5f2f" class="font-small-2 float-xs-right">{{ empresa.TERMINAL }}</span></h6>#}
+{#                                        {% if empresa.TIPO == 3 %}#}
+{#                                            <p class="list-group-item-text pt-2"><span class="tag ml-0 tag-verde-volus float-xs-right white" >REDE CREDENCIADA</span></p>#}
+{#                                        {% elif empresa.TIPO == 2 %}#}
+{#                                            <p class="list-group-item-text pt-2"><span class="tag ml-0 tag-verde-volus float-xs-right white" >EXPEDIENTE/ESCRITÓRIO</span></p>#}
+{#                                        {% elif empresa.TIPO == 4 %}#}
+{#                                            <p class="list-group-item-text pt-2"><span class="tag ml-0 tag-verde-volus float-xs-right white" >LIMPEZA/HIGIENE PESSOAL</span></p>#}
+{#                                        {% elif empresa.TIPO == 6 %}#}
+{#                                            <p class="list-group-item-text pt-2"><span class="tag ml-0 tag-verde-volus float-xs-right white" >CONSTRUÇÃO</span></p>#}
+{#                                        {% elif empresa.TIPO == 8 %}#}
+{#                                            <p class="list-group-item-text pt-2"><span class="tag ml-0 tag-verde-volus float-xs-right white" >GENÊRO ALIMENTÍCIO</span></p>#}
+{#                                        {% elif empresa.TIPO == 10 %}#}
+{#                                            <p class="list-group-item-text pt-2"><span class="tag ml-0 tag-verde-volus float-xs-right white" >MEDICAMENTO</span></p>#}
+{#                                        {% elif empresa.TIPO == 12 %}%}#}
+{#                                            <p class="list-group-item-text pt-2"><span class="tag ml-0 tag-verde-volus float-xs-right white">ALIMENTAÇÃO ESCOLAR</span></p>#}
+{#                                        {% endif %}#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </a>#}
+{#                        <hr style="margin:0; border:1px solid rgba(0, 0, 0, 0.1)">#}
+{#                    {% endfor %}#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{##}
+{#<div class="modal fade " data-keyboard="false" data-backdrop="static" id="modalFaturaVencida" tabindex="-1" role="dialog" aria-hidden="true" style="margin-top: 50px; ">#}
+{#    <div class="modal-dialog modal-xl" role="document">#}
+{#        <div class="modal-content">#}
+{#            <div class="modal-header">#}
+{#                <h4 class="modal-title">Fatura Vencida</h4>#}
+{#                <span class="font-small-3" style="color:#ccc"></span>#}
+{#            </div>#}
+{#            <br>#}
+{#                <div class="card-block" style="padding-top: 0px;">#}
+{#                    <div class="table-responsive" style="max-height:600px">#}
+{#                        <table class="table  table-click table-bordered">#}
+{#                            <thead>#}
+{#                                <tr role="row">#}
+{#                                    <th style="text-align:center">Número Fatura</th>#}
+{#                                    <th style="text-align:left">Descrição</th>#}
+{#                                    <th style="text-align:center">Inicio Referência</th>#}
+{#                                    <th style="text-align:center">Final Referência</th>#}
+{#                                    <th style="text-align:center">Vencimento </th>#}
+{#                                    <th style="text-align:right">Valor Fatura</th>#}
+{#                                    <th style="text-align:right">Valor Recebido</th>#}
+{#                                    <th style="text-align:right">Valor em Aberto</th>#}
+{#                                </tr>#}
+{#                            </thead>#}
+{#                            <tbody id="grid-fatura-vencida">#}
+{#                            </tbody>#}
+{#                            <tfoot id="tfoot-fatura-vencida">#}
+{##}
+{#                            </tfoot>#}
+{#                        </table>#}
+{#                    </div>#}
+{#                </div>#}
+{#            <div class="modal-footer">#}
+{#                <div class="form-actions" style="margin-top: 0px;">#}
+{#                    <div class="text-xs-right">#}
+{#                        <button class="btn btn-primary" onclick="$('#modalFaturaVencida').modal('hide');">#}
+{#                            <i class="ft-arrow-left"></i> Voltar#}
+{#                        </button>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+
+<footer class="footer footer-static footer-light navbar-shadow fixed" style="position: fixed;bottom: 0;width: 100%">
+    <p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2">
+        <span class="float-md-left d-xs-block d-md-inline-block">Copyright  &copy; {{ request.session.AnoVigente }} <a
+                href="https://www.brasilcard.com.br" target="_blank" class="text-bold-800 grey darken-2">VÓLUS </a> Gestão de beneficios LTDA. </span>
+        <span class="float-md-right d-xs-block d-md-inline-block">Desenvolvimento Vólus <i
+                class="fa fa-code black"></i></span>
+    </p>
+</footer>
+{#<script>habilitarAbas = 1;stepInicial = 0; GRAFICO_ORC = { "label" : "0" , "value": '0'};</script>#}
+<script src="../static/app-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
+<script src="../static/app-assets/vendors/js/ui/jquery.sticky.js" type="text/javascript"></script>
+<script src="../static/app-assets/vendors/js/charts/chart.min.js" type="text/javascript"></script>
+
+<script src="../static/app-assets/vendors/js/extensions/jquery.steps.js" type="text/javascript"></script>
+<script src="../static/app-assets/vendors/js/pickers/dateTime/moment-with-locales.min.js" type="text/javascript"></script>
+<script src="../static/app-assets/vendors/js/pickers/daterange/daterangepicker.js" type="text/javascript"></script>
+<script src="../static/app-assets/vendors/js/forms/validation/jquery.validate.min.js" type="text/javascript"></script>
+<script src="../static/app-assets/vendors/js/extensions/sweetalert.min.js" type="text/javascript"></script>
+<script src="../static/app-assets/vendors/js/tables/jquery.dataTables.min.js" type="text/javascript"></script>
+<script src="../static/app-assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js" type="text/javascript"></script>
+<script src="../static/app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js" type="text/javascript"></script>
+
+<script src="../static/app-assets/vendors/js/tables/datatable/dataTables.buttons.min.js" type="text/javascript"></script>
+<script src="../static/app-assets/vendors/js/tables/buttons.flash.min.js" type="text/javascript"></script>
+<script src="../static/app-assets/vendors/js/tables/jszip.min.js" type="text/javascript"></script>
+<script src="../static/app-assets/vendors/js/tables/vfs_fonts.js" type="text/javascript"></script>
+<script src="../static/app-assets/vendors/js/tables/buttons.html5.min.js" type="text/javascript"></script>
+<script src="../static/app-assets/vendors/js/tables/buttons.print.min.js" type="text/javascript"></script>
+
+<script src="../static/app-assets/vendors/js/extensions/jquery.knob.min.js" type="text/javascript"></script>
+<script src="../static/app-assets/js/scripts/extensions/knob.js" type="text/javascript"></script>
+<script src="../static/app-assets/vendors/js/forms/toggle/bootstrap-checkbox.min.js" type="text/javascript"></script>
+<script src="../static/app-assets/vendors/js/forms/toggle/switchery.min.js" type="text/javascript"></script>
+<script src="../static/app-assets/vendors/js/extensions/toastr.min.js" type="text/javascript"></script>
+<script src="../static/app-assets/vendors/js/charts/morris.min.js" type="text/javascript"></script>
+<script src="../static/app-assets/js/scripts/extensions/croppie.min.js" type="text/javascript"></script>
+<script src="../static/app-assets/vendors/js/forms/icheck/icheck.min.js" type="text/javascript"></script>
+<script src="../static/app-assets/vendors/js/ui/prism.min.js" type="text/javascript"></script>
+
+
+<script src="../static/app-assets/js/core/app-menu.js" type="text/javascript"></script>
+<script src="../static/app-assets/js/core/app.js" type="text/javascript"></script>
+
+<script src="../static/app-assets/js/scripts/forms/wizard-steps.min.js" type="text/javascript"></script>
+{% if request.session.ParametroLicitacao == 'TRUE' %}
+{#{% if 54 in request.session.CodigoMenus %}#}
+<script src="../static/app-assets/js/scripts/charts/chartjs/pie-doughnut/pie-simple.js" type="text/javascript"></script>
+{#{% endif %}#}
+{% endif %}
+<script src="../static/app-assets/js/scripts/charts/chartjs/advance/combo-bar-line.js" type="text/javascript"></script>
+<script src="../static/app-assets/js/scripts/tables/datatables/datatable-basic.js" type="text/javascript"></script>
+<script src="../static/app-assets/js/scripts/extensions/sweet-alerts.js" type="text/javascript"></script>
+<script src="../static/app-assets/js/scripts/modal/components-modal.js" type="text/javascript"></script>
+
+<script src="../static/app-assets/vendors/js/charts/raphael-min.js" type="text/javascript"></script>
+<script src="../static/app-assets/js/scripts/forms/switch.js" type="text/javascript"></script>
+<script src="../static/app-assets/js/scripts/charts/morris/donut.js" type="text/javascript"></script>
+<script src="../static/app-assets/tour/js/bootstrap-tour.min.js" type="text/javascript"></script>
+<script src="../static/app-assets/tour/js/bootstrap-tour.min.js" type="text/javascript"></script>
+<script src="../static/app-assets/js/scripts/cards/card-statistics.js" type="text/javascript"></script>
+<script src="../static/app-assets/js/scripts/extensions/croppie.js" type="text/javascript"></script>
+<script src="../static/app-assets/js/scripts/forms/checkbox-radio.js" type="text/javascript"></script>
+
+<script src="../static/app-assets/vendors/js/forms/select/select2.full.min.js" type="text/javascript"></script>
+<script src="../static/app-assets/js/scripts/forms/select/form-select2.js" type="text/javascript"></script>
+
+<script src="../static/custom/js/jquery.mask.js"></script>
+
+<script>
+    function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = jQuery.trim(cookies[i]);
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+    var csrftoken = getCookie('csrftoken');
+
+    function csrfSafeMethod(method) {
+        // tminhahese HTTP methods do not require CSRF protection
+        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+    }
+
+    function abreModalFaturaVencida() {
+        $.ajaxSetup({
+            beforeSend: function(xhr, settings) {
+                if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+            }
+        });
+
+        $.ajax({
+            dataType:"json",
+            type: "POST",
+            async: false,
+            url: "/ConsultaFaturasVencidas",
+            data: {'df':'dfa'},
+            success: function(data){
+                $("#modalFaturaVencida").modal();
+
+                $("#grid-fatura-vencida").empty();
+                for(var i in data.FaturasVencidas){
+
+                    htmlDados = `<tr role="row" >` +
+                                `<td style="text-align:center">${data.FaturasVencidas[i].NR_DOCUMENTO}</td>`+
+                                `<td style="text-align:left">${data.FaturasVencidas[i].TIPO_FATURA}</td>`+
+                                `<td style="text-align:center">${data.FaturasVencidas[i].DATA_INICIAL_REFERENCIA}</td>`+
+                                `<td style="text-align:center">${data.FaturasVencidas[i].DATA_FINAL_REFERENCIA}</td>`+
+                                `<td style="text-align:center">${data.FaturasVencidas[i].VENCIMENTO}</td>`+
+                                `<td style="text-align:right">${data.FaturasVencidas[i].VALOR_FATURA}</td>`+
+                                `<td style="text-align:right">${data.FaturasVencidas[i].VALOR_RECEBIDO}</td>`+
+                                `<td style="text-align:right">${data.FaturasVencidas[i].VALOR_PRINCIPAL}</td>`+
+                                `</tr>`;
+                    $("#grid-fatura-vencida").append(htmlDados);
+                }
+
+            },error: function(data){
+                swal("","Ocorreu um erro ao consultar faturas","info");
+            }
+        });
+
+    }
+    
+    function abreEmpresasGrupo() {
+        $("#modalEmpresasGrupo").modal();
+    }
+
+    function alteraEmpresaLogada(dados) {
+        $.ajaxSetup({
+            beforeSend: function(xhr, settings) {
+                if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+            }
+        });
+
+        $.ajax({
+            dataType:"json",
+            type: "POST",
+            async: false,
+            url: "/AlteraEmpresaLogada",
+            data: dados,
+            success: function(data){
+                //window.location.reload('/Home')
+                window.open('/Home', '_parent');
+            },error: function(data){
+                swal("","Ocorreu ao logar em outra empresa.","info");
+        }
+    });
+}
+
+    function abreAlterarSenha() {
+        $.ajaxSetup({
+            beforeSend: function(xhr, settings) {
+                if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+            }
+        });
+
+        $.ajax({
+            dataType:"json",
+            type: "POST",
+            async: false,
+            url: "/GeraTokenAlterarSenha",
+            data: '',
+            success: function(data){
+                window.open('/AlteraSenha/'+data.Retorno,'_parent');
+            },error: function(data){
+                swal("","Ocorreu erro ao abrir Alterar senha.","info");
+            }
+        });
+    }
+    {% if Alterar %}
+        $(document).ready(function() {
+            $("#btn-cadastrar").html(`<i class="fa fa-check-square-o"></i> Alterar`);
+            $('#baseIcon-tab13').trigger('click');
+            $('#baseIcon-tab11').attr('style','pointer-events:none');
+         });
+    {% endif %}
+</script>
+
+</body>
+</html>

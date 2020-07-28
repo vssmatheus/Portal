@@ -1,0 +1,74 @@
+{% extends 'BaseLayout.html' %} {% block content %}{% csrf_token %}
+
+    {% if request.session.TipoUsuario == 3 %}
+        {% block dados_home_cnv %}
+            {% include 'Autenticacao/ArquivoHome/HomeDadosCNV.html' %}
+        {% endblock dados_home_cnv %}
+
+    {% else %}
+        {% block dados_home_cli %}
+              {% include 'Autenticacao/ArquivoHome/HomeDadosCli.html' %}
+        {% endblock dados_home_cli %}
+
+    {% endif %}
+
+    <script type="text/javascript" src="../static/Scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/js/Autenticacao/Home.js"></script>
+    <script type="text/javascript" src="../static/js/funcoes.js"></script>
+    <script>
+
+        TEM_EMPENHO = '{{ request.session.TemEmpenhoCadastrado }}'
+
+{#        {% if GraficoOrcamento %}#}
+{#            GRAFICO = {{GraficoOrcamento.GRAFICO | safe}}#}
+{#            for (x in GRAFICO) {#}
+{#                GRAFICO_ORC.push({ "label" : GRAFICO[x]['DESCRICAO_STATUS'], "value": GRAFICO[x]['QTD'] });#}
+{#            }#}
+{#        {% endif %}#}
+{#        {% if GraficoOrcamento %}#}
+{#            GRAFICO = {{ GraficoOrcamento.DADOS | safe }}#}
+{#        {% endif %}#}
+
+        $(document).ready(function () {
+            sessionStorage.clear();
+
+
+
+
+             loadDiv('card-grafico-status-orcamento', 'B')
+             loadDiv('card-grafico-licitacao', 'B')
+             loadDiv('card-grafico-limite-credito', 'B')
+             loadDiv('card-grafico-ranking-gastos', 'B')
+             $.ajaxSetup({
+                beforeSend: function (xhr, settings) {
+                    if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                        xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                    }
+                }
+             });
+             $.ajax({
+                 dataType:"json",
+                 type: "POST",
+                 url: "/BuscaGraficosHome",
+                 success: function(data){
+                     console.log(data)
+                     if(data.GraficoOrcamentos){
+                         grafico_status_orc(data.GraficoOrcamentos);
+                        loadDiv('card-grafico-status-orcamento', 'L')
+                     }else {
+                         grafico_limite(data.GraficoLimite);
+                         grafico_empenho(data.GraficoEmpenho);
+                         grafico_ranking(data.GraficoRanking);
+                         loadDiv('card-grafico-licitacao', 'L')
+                         loadDiv('card-grafico-limite-credito', 'L')
+                         loadDiv('card-grafico-ranking-gastos', 'L')
+                     }
+
+                 },error: function(){
+                     swal("","Erro ao apresentar grafico","warning");
+                 }
+             });
+        });
+    </script>
+{% endblock content %}
+
