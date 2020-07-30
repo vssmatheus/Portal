@@ -21,7 +21,15 @@ class LoginDao:
                   AND LOGIN = %(Login)s
                   AND SENHA = %(Senha)s
              """
-        result = []
-        result = cx.select(sql, param)
+        resul = []
+        resul = cx.select(sql, param)
 
-        return result
+        msg = ''
+
+        if 'RowsEffect' in resul:
+            if int(resul['RowsEffect']) > 0:
+                msg = {'Mensagem': 'Bem vindo!', 'Tipo': 'success'}
+        else:
+            msg = {'Mensagem': 'Login ou Senha invalida!', 'Tipo': 'error'}
+
+        return msg
