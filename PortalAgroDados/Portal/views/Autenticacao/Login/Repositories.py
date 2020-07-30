@@ -11,8 +11,8 @@ class LoginDao:
                          SENHA,
                          LOGIN,
                          DATA_CADASTRO,
-                         CASE USU.STATUS_USUARIO
-                            WHEN  'A'  then 'ATIVO'
+                         CASE STATUS_USUARIO
+                            WHEN  'A' then 'ATIVO'
                             WHEN  'B' then 'BLOQUEADO'
                             WHEN  'C' then 'CANCELADO'
                          END AS DESCRICAO_STATUS

@@ -2,11 +2,10 @@ from django.conf import settings
 from django.shortcuts import render
 from wtforms import Form, StringField, PasswordField
 from wtforms import validators
-from django.contrib.auth.models import User
 from django.contrib.auth import login, logout
 from django.http import HttpResponseRedirect
 
-from .Repositories import *
+from .Repositories import LoginDao
 from ....seguranca import SegurancaController
 import smtplib
 from email.mime.multipart import MIMEMultipart
@@ -30,10 +29,8 @@ class FormAlteraSenha(Form):
 class Login:
     @csrf_exempt
     def login(request):
-        form = FormLoginUsuario(request.POST, None)
+        form = FormLoginUsuario(request.POST or None)
         au = LoginDao()
-        vl = Login()
-        retorno = {'form': form}
 
         resul = []
         if request.POST:
@@ -41,15 +38,11 @@ class Login:
             param.update(request.POST.dict())
 
             resul = au.realiza_login(param)
-            print(resul)
-
             if resul == []:
-                vl.deslogar_acesso(request)
-                return render(request, 'AccessDenied.html', retorno)
-
+                return render(request, 'Autenticacao/Login.html', {'form': form, 'Retorno' : 'LOGIN OU SENHA INVALIDA'})
             return render(request, 'Autenticacao/Home.html')
 
-        return render(request, 'Autenticacao/Login.html', retorno)
+        return render(request, 'Autenticacao/Login.html', {'form': form})
 
     def esqueci_minha_senha(request):
         form = FormEsqueciSenha(request.POST or None)

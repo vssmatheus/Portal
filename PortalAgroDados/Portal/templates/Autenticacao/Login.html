@@ -23,7 +23,8 @@
                                     <div class="auth-form">
                                         <h2 class="text-center mb-4"> Portal Agrodados</h2>
                                         <h4 class="text-center mb-4">Faça login na sua conta</h4>
-                                        <form action="/Home">
+                                        <form action="/Login" method="POST">
+
                                             {% load wtforms %}
                                             {% csrf_token %}
                                             <div class="form-group">
