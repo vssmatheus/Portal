@@ -9,9 +9,9 @@ class Conexao:
     def __init__(self):
         self.host = 'mysql669.umbler.com'
         self.port = 41890
-        self.user = 'cademeubicho'
-        self.database = 'cademeubicho'
-        self.password = 'cadeopet'
+        self.user = 'tccagrodados'
+        self.database = 'tccagrodados'
+        self.password = 'agrodados'
 
     def conectar(self):
         try:
@@ -19,9 +19,9 @@ class Conexao:
             #self.db = MySQLdb.connect(self.user, self.password, self.database, self.host, self.port)
             self.db = MySQLdb.connect(
             host='mysql669.umbler.com',
-            user='cademeubicho',
-            passwd='cadeopet',
-            db='cademeubicho',
+            user='tccagrodados',
+            passwd='agrodados',
+            db='tccagrodados',
             port=41890 )
 
 
