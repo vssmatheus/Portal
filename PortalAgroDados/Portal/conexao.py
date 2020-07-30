@@ -26,7 +26,6 @@ class Conexao:
 
 
 
-
         except MySQLdb.DatabaseError as e:
             error, _ = e.args
             if error.code == 1017:
