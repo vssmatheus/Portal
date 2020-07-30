@@ -31,11 +31,25 @@ class Login:
     @csrf_exempt
     def login(request):
         form = FormLoginUsuario(request.POST, None)
+        au = LoginDao()
+        vl = Login()
         retorno = {'form': form}
+
+        resul = []
         if request.POST:
+            param = {'Login': request.POST.get('login'), 'Senha': request.POST.get('senha')}
+            param.update(request.POST.dict())
+
+            resul = au.realiza_login(param)
+            print(resul)
+
+            if resul == []:
+                vl.deslogar_acesso(request)
+                return render(request, 'AccessDenied.html', retorno)
+
             return render(request, 'Autenticacao/Home.html')
-        else:
-            return render(request, 'Autenticacao/Login.html', retorno)
+
+        return render(request, 'Autenticacao/Login.html', retorno)
 
     def esqueci_minha_senha(request):
         form = FormEsqueciSenha(request.POST or None)
