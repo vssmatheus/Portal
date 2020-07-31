@@ -72,7 +72,7 @@ function consultaPrecosPraticado (codigoProduto) {
         case "EMPRESA":
             urlPost = "/ConsultaPrecoPraticadoEmpresa";
             campos = ['CODIGO_ORCAMENTO', 'NOME_CARTAO', 'DATA_CADASTRO', 'CONVENIADA', 'STATUS','MARCA_PRODUTO', 'QUANTIDADE_PRODUTO', 'VALOR_UNITARIO_PRODUTO', 'VALOR_DESCONTO_PRODUTO', 'VALOR_TOTAL'];
-            cabecalho = ['Cód. Orc.', 'Nome Cartão','Cadastro', 'Estabelecimento', 'Status', 'Marca', 'Qtd.', 'Produto','Desconto', 'Total'];
+            cabecalho = ['Cód. Orc.', 'Nome Cartão','Cadastros', 'Estabelecimento', 'Status', 'Marca', 'Qtd.', 'Produto','Desconto', 'Total'];
             dados = {   'CodigoOrcamento': CODIGO_ORCAMENTO,
                         'CodigoProduto': codigoProduto,
                         'DataInicial': $("#data_inicial_cadastro").val(),

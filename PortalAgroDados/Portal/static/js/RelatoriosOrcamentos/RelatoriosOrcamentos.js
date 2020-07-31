@@ -147,7 +147,7 @@ function objetoRelatorio(){
    return {
         ComparativoDeOrcamento_ANALISE(data){
             object['niveis_accordion'] = ['DEPARTAMENTO', 'NOME_CARTAO', 'AGRUPADOR'];
-            object['titulo_tabela'] = ['Orc.', 'Staus', 'Fornecedor', 'Cadastro', 'Validade', 'Produtos', 'Desc.', 'Valor'];
+            object['titulo_tabela'] = ['Orc.', 'Staus', 'Fornecedor', 'Cadastros', 'Validade', 'Produtos', 'Desc.', 'Valor'];
             object['dados_tabela'] = ['CODIGO', 'STATUS', 'CONVENIADA', 'DATA_CADASTRO', 'DATA_VALIDADE_ORCAMENTO', 'PRODUTOS', 'DESCONTO', 'TOTAL_ORCAMENTO'];
             object['alinhamento_tabela'] = ['center', 'center', 'center', 'center', 'center', 'right', 'right', 'right'];
             object['link'] = ['abreOrcamento', ['CODIGO']];
@@ -175,7 +175,7 @@ function objetoRelatorio(){
 
         ComparativoDeOrcamento_CONSULTA(data){
             object['niveis_accordion'] = ['STATUS'];
-            object['titulo_tabela'] = ['Orc.', 'Cartão', 'Fornecedor', 'Cadastro', 'Prazo Resposta', 'Validade','Produtos', 'Desc.', 'Valor', 'NF'];
+            object['titulo_tabela'] = ['Orc.', 'Cartão', 'Fornecedor', 'Cadastros', 'Prazo Resposta', 'Validade','Produtos', 'Desc.', 'Valor', 'NF'];
             object['dados_tabela'] = ['CODIGO', 'NOME_CARTAO', 'CONVENIADA', 'DATA_CADASTRO', 'DATA_PRAZO_RESPOSTA', 'DATA_VALIDADE_ORCAMENTO','PRODUTOS', 'DESCONTO', 'TOTAL_ORCAMENTO', 'POSSUI_NF_PRODUTO_ICON'];
             object['alinhamento_tabela'] = ['center', 'center', 'center', 'center', 'center', 'center', 'right', 'right', 'right'];
             object['link'] = ['buscarorcamentosRelatorios'];

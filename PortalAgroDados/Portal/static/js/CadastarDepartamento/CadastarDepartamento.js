@@ -31,7 +31,7 @@ function limpaCampo() {
 
 function cadastrarCentroCusto() {
     if ($("#cc_descricao").val() == ''){
-        swal("","Por favor, preencher o campo Centro de Custo para validar o Cadastro","warning");
+        swal("","Por favor, preencher o campo Centro de Custo para validar o Cadastros","warning");
         return false;
     }
     $.ajaxSetup({
@@ -60,11 +60,11 @@ function cadastrarCentroCusto() {
 
 function cadastrarDepartamento() {
     if ($("#cd_descricao_centro_custo").val() == ''){
-        swal("","Por favor, selecione  um Centro de Custo para validar o Cadastro","warning");
+        swal("","Por favor, selecione  um Centro de Custo para validar o Cadastros","warning");
         return false;
     }
     if ($("#cd_descricao").val() == ''){
-        swal("","Por favor, preencher o campo Departamento para validar o Cadastro","warning");
+        swal("","Por favor, preencher o campo Departamento para validar o Cadastros","warning");
         return false;
     }
     $.ajaxSetup({

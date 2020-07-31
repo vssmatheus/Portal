@@ -122,7 +122,7 @@ function buscaOrcamento(tipo='') {
                         'dados': data.Relacao,
                         'accordion': 'accordion-comparativo-de-orcamento-cv',
                         'titulo_accordion': ['STATUS'],
-                        'titulos_table_head': ['Orc.', 'Agrup.', 'Cartão', 'Fornecedor', 'Cadastro', 'Prazo Resposta', 'Validade','Produtos', 'Desc.', 'Valor', 'NF'],
+                        'titulos_table_head': ['Orc.', 'Agrup.', 'Cartão', 'Fornecedor', 'Cadastros', 'Prazo Resposta', 'Validade','Produtos', 'Desc.', 'Valor', 'NF'],
                         'dados_table_body': ['CODIGO', 'AGRUPADOR', 'NOME_CARTAO', 'CONVENIADA', 'DATA_CADASTRO', 'DATA_PRAZO_RESPOSTA', 'DATA_VALIDADE_ORCAMENTO', 'PRODUTOS', 'DESCONTO', 'TOTAL_ORCAMENTO', 'POSSUI_NF_PRODUTO_ICON'],
                         'alinhamento_table_head_body': ['center', 'center', 'center', 'center', 'center', 'right', 'right', 'right', 'right', 'center', 'center'],
                         'link_table':['buscaOrcamentoSelecionado']
@@ -170,7 +170,7 @@ function buscaHistoricoOrcamentos () {
                             'dados': data.Relacao,
                             'accordion': 'accordion-historico-de-orcamento',
                             'titulo_accordion': ['CARTAO_ACCORDION'],
-                            'titulos_table_head': ['Cartão', 'Data Cadastro', 'Estabelecimento', 'Orçamento', 'Agrupador','Data Alteração', 'Status De.', 'Status Para'],
+                            'titulos_table_head': ['Cartão', 'Data Cadastros', 'Estabelecimento', 'Orçamento', 'Agrupador','Data Alteração', 'Status De.', 'Status Para'],
                             'dados_table_body': ['CARTAO', 'DATA_CADASTRO', 'NOME_CONVENIADA', 'CODIGO_ORCAMENTO', 'AGRUPADOR', 'DATA_ALTERACAO', 'STATUS_DE', 'STATUS_PARA'],
                             'alinhamento_table_head_body': ['center', 'center', 'center', 'center', 'center', 'center', 'center', 'center'],
                             'link_table': ['abreOrcamento', 'CODIGO_ORCAMENTO']
