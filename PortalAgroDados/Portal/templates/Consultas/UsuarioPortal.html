@@ -1,10 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'BaseLayout.html' %} {% block content %} {% csrf_token %} {% load wtforms %}
+    <div class="card" style="border-style: ridge; background: white;">
+        <div class="card-header" style="border-bottom:3px solid #EEEED1; background: #EEEED1; color: #000000">
+            <h4 class="card-title">CONSULTAR DE ACESSO AO PORTAL</h4>
+        </div>
+        <div class="card-body">
+            <div class="card-block" id="div-card-consulta-usuario">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group ">
+                            {{ form.login.label }}
+                            {% form_field form.login class="form-control "  style="text-transform:uppercase"%}
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            {{ form.nome_usuario.label }}
+                            {% form_field form.nome_usuario class="form-control "  style="text-transform:uppercase"%}
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            {{ form.status.label }}
+                            {% form_field form.status class="form-control" style="text-transform:uppercase"%}
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label class="white">.</label>
+                            <button type="button" onclick="buscaUsuarioPortal();"
+                                    id="btnbuscaUsuarioPortal"
+                                    style="padding: 0.55rem 0.85rem; border-radius: 0.25rem; width: 100%;"
+                                    class="btn btn-primary"><i class="fa fa-search"></i> Consultar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
 
-</body>
-</html>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="content table-responsive table-full-width">
+                                <table class="table table-hover">
+                                     <thead>
+                                        <th>Login</th>
+                                    	<th>Nome Usuário</th>
+                                    	<th>E-mail</th>
+                                    	<th>Alterar</th>
+                                    	<th>Excluir</th>
+                                    	<th>Imprimir</th>
+                                    	<th>Incluir</th>
+                                    	<th>Status</th>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10"></div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+<!--                            <label class="white">.</label>-->
+                            <button type="button" onclick="window.open('/CadastroUsuarioPortal/0', '_parent')"
+                                    id="btnbuscaGestor"
+                                    style="padding: 0.55rem 0.85rem; border-radius: 0.25rem; width: 100%;"
+                                    class="btn btn-primary"><i class="fa fa-plus"></i> Cadastrar Usuário Portal
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -39,9 +39,8 @@ class Login:
 
             resul = au.realiza_login(param)
             if resul == []:
-                return render(request, 'Autenticacao/Login.html', {'form': form, 'Retorno' : 'LOGIN OU SENHA INVALIDA'})
+                return render(request, 'Autenticacao/Login.html', {'form': form})
             return render(request, 'Autenticacao/Home.html')
-
         return render(request, 'Autenticacao/Login.html', {'form': form})
 
     def esqueci_minha_senha(request):
