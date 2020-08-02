@@ -3,8 +3,6 @@ var habilitarAbas = 0; //habilitar todos os campos var habilitarAbas 0 = on | 1 
 var stepInicial = 0;   //index de inicialização var stepInicial
 
 
-
-
 /*Antigo load do migue*/
 function loadDiv(id,tipo){
     var block_ele = $("#"+id).closest('.card');
@@ -100,43 +98,6 @@ String.prototype.lpad = String.prototype.lpad || function(padString, length) {
     while (str.length < length)
         str = padString + str;
     return str;
-}
-
-/* Controle de Dicas do sistema*/
-function ControleDicas(tipo, btn){
-
-    $.ajax({
-        dataType:"json",
-        type: "POST",
-        url: "/ControleDicas",
-        data: {"TipoDica": tipo},
-        success: function(data){
-            $("#dicas_sessao").val(tipo);
-            
-            if(tipo == 'N'){
-                swal({
-                    title: '',
-                    text: 'Dicas desativadas com sucesso! Você pode ativar elas a qualquer momento em <a href="/AlterarDadosUsu" class="primary">Alterar dados cadastrais</a>',
-                    html: true,
-                    type: "success"
-                });
-            }else{
-                swal({
-                    title: '',
-                    text: 'Dicas ativadas com sucesso! Você pode ativar elas a qualquer momento em <a href="/AlterarDadosUsu" class="primary">Alterar dados cadastrais</a>',
-                    html: true,
-                    type: "success"
-                });
-            }
-            if(btn == 'link'){
-                $("#alerta-tour").toggle("slide");
-            }
-        },error: function(data){
-            $(document).ready(function() {
-                swal("Erro ao desativar dicas!","","error");
-            });
-        }
-    });
 }
 
 /*Formata valores*/
@@ -541,78 +502,6 @@ $(document).ready(function(){
 } );
 });
 
-function altera_cidade_por_uf(id_uf, id_cidades, ibge=false){
-    var e = document.getElementById(id_uf);
-    var uf = e.options[e.selectedIndex].value;
-
-
-    var rota = ''
-    if (ibge){
-        rota = "/ConsultaCidadesIbge";
-    }else {
-        rota = "/ConsultaCidades";
-    }
-
-    $("#"+id_cidades).html("<option>Carregando...</option>");
-    $.ajaxSetup({
-        beforeSend: function(xhr, settings) {
-        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-                xhr.setRequestHeader("X-CSRFToken", csrftoken);
-            }
-        }
-    });
-    $.ajax({
-        dataType:"json",
-        type: "POST",
-        url: rota,
-        data: {"Estado": uf },
-        success: function(data){
-
-            $("#"+id_cidades).empty();
-            if (ibge){
-               $("#"+id_cidades).html("<option value=''>SELECIONE UMA CIDADE</option>");
-            }else {
-                $("#"+id_cidades).html("<option value='TD'>TODOS</option>");
-            }
-
-            for(var i in data.Cidades){
-                $("#"+id_cidades).append(`<option value="`+data.Cidades[i].DESCRICAO+`">`+data.Cidades[i].DESCRICAO+`</option>`);
-            }
-        },error: function(data){
-            $("#"+id_cidades).html("<option value='TD'>TODOS</option>");
-        }
-    });
-}
-
-function alteraDepartamentoPorCentroCusto(id_centrocusto, id_departamento){
-    var e = document.getElementById(id_centrocusto);
-    var uf = e.options[e.selectedIndex].value;
-
-    $("#"+id_departamento).html("<option>Carregando...</option>");
-    $.ajaxSetup({
-        beforeSend: function(xhr, settings) {
-        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-                xhr.setRequestHeader("X-CSRFToken", csrftoken);
-            }
-        }
-    });
-    $.ajax({
-        dataType:"json",
-        type: "POST",
-        url: "/ConsultarDepartamentoPorCentroCusto",
-        data: {"CentroCusto": uf },
-        success: function(data){
-            $("#"+id_departamento).empty();
-            $("#"+id_departamento).html("<option value='TD'>TODOS</option>");
-            for(var i in data.Relacao){
-                $("#"+id_departamento).append(`<option value="`+data.Relacao[i].CODIGO+`">`+data.Relacao[i].DEPARTAMENTO+`</option>`);
-            }
-        },error: function(data){
-            $("#"+id_departamento).html("<option value='TD'>TODOS</option>");
-        }
-    });
-}
-
 function validaDatasRelatorios(dt_inicial, dt_final, validaInicialFuturo = false){
     var inicial = moment($("#"+dt_inicial).val(), "DD/MM/YYYY").toDate();
     var final = moment($("#"+dt_final).val(), "DD/MM/YYYY").toDate();
@@ -787,7 +676,6 @@ function restoreInputLocalStorage(hrefClickButton=''){
         }
     }
 }
-
 
 function erroProcessarDados(id_div = ''){
     // let msg = (erro.responseText.split(" ").join("").split('ExceptionType')[0]).split ('line');
