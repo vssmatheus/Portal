@@ -31,25 +31,21 @@ class ConsultarUsuarioPortalDao:
                 WHERE USU.CODIGO = PER.CODIGO
         """
         if 'LoginUsuario' in param:
-            if param['LoginUsuario'] != '' :
-                sql += """ AND USU.LOGIN = %(LoginUsuario)s """
-            else:
-                del param['LoginUsuario']
+            if param['LoginUsuario'] != '':
+                param['LoginUsuario'] = '%{}%'.format(param['LoginUsuario'])
+                sql += """ AND UPPER(TRIM(USU.LOGIN)) LIKE UPPER(TRIM(%(LoginUsuario)s ))"""
 
         if 'NomeUsuario' in param:
-            if param['NomeUsuario'] != '' :
-                sql += """ AND USU.NOME = %(NomeUsuario)s """
-            else:
-                del param['NomeUsuario']
+            if param['NomeUsuario'] != '':
+                param['NomeUsuario'] = '%{}%'.format(param['NomeUsuario'])
+                sql += """ AND UPPER(TRIM(USU.NOME)) LIKE UPPER(TRIM(%(NomeUsuario)s ))"""
 
         if 'StatusUsuario' in param:
             if param['StatusUsuario'] != '' and param['StatusUsuario'] != 'TD':
-                param['StatusUsuario'] = '%{}%'.format(param['StatusUsuario'])
-                sql += """ AND UPPER(USU.STATUS_USUARIO) LIKE UPPER(%(StatusUsuario)s)"""
-            else:
-                del param['StatusUsuario']
+                sql += """ AND USU.STATUS_USUARIO =:StatusUsuario """
 
-        sql += """ ORDER BY 2 ASC """
+        sql += """ ORDER BY LOGIN """
+
 
         resul = cx.select(sql, param)
 

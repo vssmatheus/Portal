@@ -12,13 +12,13 @@ class FormCadastrarUsuarioPortal(Form):
     status = SelectField("Status: ")
     codigo_usuario = StringField()
 
-    direito_alterar = BooleanField()
-    direito_excluir = BooleanField()
-    direito_impressao = BooleanField()
-    direito_incluir = BooleanField()
-    PermVisuLogin = BooleanField()
 
 
+    direito_alterar = BooleanField('Alterar')
+    direito_excluir = BooleanField('Excluir')
+    direito_impressao = BooleanField('Impressão')
+    direito_incluir = BooleanField('Incluir')
+    direito_visu_login = BooleanField('Visualizar Logins')
 
 class CadastrosAcessoPortal:
     def render_tela_usuario_portal(request):

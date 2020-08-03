@@ -35,47 +35,30 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-body">
-                    <div class="box-body">
-                        <table id="example2" class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                   <th>Login</th>
-                                   <th>Nome Usuário</th>
-                                   <th>E-mail</th>
-                                   <th>Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                      <td>Trident</td>
-                                      <td>Internet
-                                        Explorer 4.0
-                                      </td>
-                                      <td>Win 95+</td>
-                                      <td> 4</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <br><br><br>
-                <div class="row" >
-                    <div class="col-md-8 "></div>
-                    <div class="col-md-4 " style="float: right">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <p class="lead primary">Total</p>
-                                <tbody>
-                                    <tr>
-                                        <td class="text-bold-800"> Total Acessos</td>
-                                        <td class="text-bold-800 text-xs-right" id="qnt_total" style="color: #789cd6">0</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+<!--                <div class="card-body">-->
+<!--                    <div class="box-body">-->
+<!--                        <table id="example2" class="table table-bordered table-hover" id="tableListarUsuario">-->
+<!--                            <thead>-->
+<!--                                <tr>-->
+<!--                                   <th>Login</th>-->
+<!--                                   <th>Nome Usuário</th>-->
+<!--                                   <th>E-mail</th>-->
+<!--                                   <th>Status</th>-->
+<!--                                </tr>-->
+<!--                            </thead>-->
+<!--                            <tbody>-->
+<!--                                <tr>-->
+<!--                                      <td>Trident</td>-->
+<!--                                      <td>Internet-->
+<!--                                        Explorer 4.0-->
+<!--                                      </td>-->
+<!--                                      <td>Win 95+</td>-->
+<!--                                      <td> 4</td>-->
+<!--                                </tr>-->
+<!--                            </tbody>-->
+<!--                        </table>-->
+<!--                    </div>-->
+<!--                </div>-->
                 <br><br><br>
                 <div class="row">
                     <div class="col-md-9"></div>
@@ -97,16 +80,22 @@
     <script type="text/javascript" src="../static/Scripts/jquery.min.js"></script>
     <script type="text/javascript" src="../static/js/UsuarioPortal/UsuarioPortal.js"></script>
     <script>
-  $(function () {
-    $('#example1').DataTable()
-    $('#example2').DataTable({
-      'paging'      : true,
-      'lengthChange': false,
-      'searching'   : false,
-      'ordering'    : true,
-      'info'        : true,
-      'autoWidth'   : false
-    })
-  })
-</script>
+      $(document).ready(function(){
+          CABECALHO_TABELA = ['Login', 'Nome Usuário','Incluir', 'Alterar', 'Excluir', 'Imprimir', 'Aprovar', 'SMS', 'Telefone', 'Tipo Envio SMS', 'Status'];
+          CAMPOS_TABELA = ['LOGIN', 'NOME_USUARIO', 'INCLUIR', 'ALTERAR', 'EXCLUIR', 'IMPRIMIR', 'APROVAR_ORCAMENTO', 'ACEITA_SMS', 'TELEFONE', 'TIPO_ENVIO_SMS', 'DESCRICAO_STATUS'];
+
+          montaTabUsuPortal(true);
+      });
+      $(function () {
+        $('#example1').DataTable()
+        $('#example2').DataTable({
+          'paging'      : true,
+          'lengthChange': false,
+          'searching'   : false,
+          'ordering'    : true,
+          'info'        : true,
+          'autoWidth'   : false
+        })
+      })
+    </script>
 {% endblock content %}

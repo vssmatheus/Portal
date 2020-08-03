@@ -1,16 +1,17 @@
 {% extends 'BaseLayout.html' %}{% block content %}{% load wtforms %}{% csrf_token %}
      <div class="card" style="border-style: ridge; background: white;">
-         <div class="card-header" style="border-bottom:3px solid #75c46a; background: #3f4444; color: #FFF">
+         <div class="card-header" style="border-bottom:3px solid #EEEED1; background: #EEEED1; color: #000000">
             {% if form.codigo_usuario.data == NaN or form.codigo_usuario.data == '' %}
                 <h4 class="card-title">Cadastro Usuário Portal </h4>
             {% else %}
                 <h4 class="card-title">Alterar Cadastro Usuário Portal </h4>
             {% endif %}
-            <a class="heading-elements-toggle"><i class="fa fa-ellipsis font-medium-3"></i></a>
         </div>
         <div class="card-body">
             <div class="card-block">
                 <form method="POST" action="/CadastroUsuarioPortal" class="form form-horizontal" autocomplete="off" id="formularioAcessoPortal" name="formularioAcessoPortal">
+                     <h4 class="form-section"><i class="fas fa-user"></i> Dados Usuários</h4>
+                     <br><br>
                     <div class="row">
                         <div class="col-md-4">
                             {{ form.nome_completo.label }} <spam class="danger">*</spam>
@@ -62,10 +63,10 @@
                     </div>
                     <hr>
                     <div class="form-body">
-                        <h4 class="form-section"><i class="ft-unlock"></i> Liberar/Bloquear Permissões</h4>
+                        <h4 class="form-section"><i class="fas fa-tasks"></i> Liberar/Bloquear Permissões</h4>
                         <br><br>
 
-                        <div class="col-md-2 col-sm-12">
+                        <div class="col-md-2 ">
                             <div class="form-group pb-1">
                                 {% form_field form.direito_alterar class="switchery" data-size="sm" %}
                                 {{ form.direito_alterar.label }}
@@ -75,7 +76,7 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="col-md-2 col-sm-12">
+                        <div class="col-md-2 ">
                             <div class="form-group pb-1">
                                 {% form_field form.direito_excluir class="switchery" data-size="sm" %}
                                 {{ form.direito_excluir.label }}
@@ -85,7 +86,7 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="col-md-2 col-sm-12">
+                        <div class="col-md-2 ">
                             <div class="form-group pb-1">
                             {% form_field form.direito_impressao class="switchery" data-size="sm" %}
                             {{ form.direito_impressao.label }}
@@ -96,7 +97,7 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="col-md-2 col-sm-12">
+                        <div class="col-md-2 ">
                             <div class="form-group pb-1">
                                 {% form_field form.direito_incluir class="switchery" data-size="sm" %}
                                 {{ form.direito_incluir.label }}
@@ -106,7 +107,7 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="col-md-2 col-sm-12">
+                        <div class="col-md-2 ">
                             <div class="form-group pb-1">
                                 {% form_field form.direito_visu_login class="switchery" data-size="sm" %}
                                 {{ form.direito_visu_login.label }}
@@ -124,11 +125,11 @@
                             <div class="form-group">
                                 <label class="white">.</label>
                                 {% if form.codigo_usuario.data == 0 %}
-                                    <button type="button" id="btncadastarGestor" style="padding: 0.55rem 0.85rem; border-radius: 0.25rem; width: 100%" onclick="cadastrarGestor();" class="btn btn-success">
+                                    <button type="button" id="btncadastarGestor" style="padding: 0.55rem 0.85rem; border-radius: 0.25rem; width: 100%" onclick="cadastrarUsuario();" class="btn btn-success">
                                         <i class="fa fa-plus"></i> Cadastar
                                     </button>
                                 {%  else %}
-                                    <button type="button" id="btnEditarGestor" style="padding: 0.55rem 0.85rem; border-radius: 0.25rem; width: 100%" onclick="alterarGestor()" class="btn btn-success"><i class="fa fa-plus"></i> Editar
+                                    <button type="button" id="btnEditarGestor" style="padding: 0.55rem 0.85rem; border-radius: 0.25rem; width: 100%" onclick="alterarUsuario()" class="btn btn-success"><i class="fa fa-plus"></i> Editar
                                     </button>
                                 {% endif %}
                             </div>
