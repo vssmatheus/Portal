@@ -24,12 +24,4 @@ class LoginDao:
         resul = []
         resul = cx.select(sql, param)
 
-        msg = ''
-
-        if 'RowsEffect' in resul:
-            if int(resul['RowsEffect']) > 0:
-                msg = {'Mensagem': 'Bem vindo!', 'Tipo': 'success'}
-        else:
-            msg = {'Mensagem': 'Login ou Senha invalida!', 'Tipo': 'error'}
-
-        return msg
+        return resul

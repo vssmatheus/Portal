@@ -27,7 +27,7 @@ function csrfSafeMethod(method) {
 
 //**************Consultar Usuário portal
 function buscaUsuarioPortal() {
-    loadDiv('div-card-consulta-usuario', 'B');
+    // loadDiv('div-card-consulta-usuario', 'B');
     $.ajaxSetup({
         beforeSend: function(xhr, settings) {
             if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
@@ -44,7 +44,7 @@ function buscaUsuarioPortal() {
                'StatusUsuario': $("#status").val()
         },
         success: function(data){
-             loadDiv('div-card-consulta-usuario', 'L');
+             // loadDiv('div-card-consulta-usuario', 'L');
             montaTabUsuPortal(false, data.Relacao);
             $('#qnt_total').html(data.Relacao.length)
 

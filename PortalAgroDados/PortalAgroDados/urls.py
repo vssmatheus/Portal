@@ -21,6 +21,6 @@ urlpatterns = [
     path('', include('Portal.views.Cadastros.url')),
     path('', include('Portal.views.Consultas.url')),
     # path('', include('Portal.views.Relatorios.url')),
-    # path('', include('Portal.views.Funcoes.url')),
+    path('', include('Portal.views.Funcoes.url')),
 
 ]
