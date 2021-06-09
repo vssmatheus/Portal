@@ -7,7 +7,7 @@ chardet==3.0.4
 djangorestframework==3.11.0
 idna==2.9
 mysqlclient==1.4.6
-pip==19.1.1
+pip==19.2
 pytz==2020.1
 requests==2.23.0
 setuptools==46.2.0
